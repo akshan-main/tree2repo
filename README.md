@@ -45,7 +45,7 @@ EOF
 
 Result:
 
-- The top-level label line `my-project/` is ignored by default.
+- The top-level label line `my_project_root/` is ignored by default.
 - Inside `my_project_root` you will now have:
 
 ```python
@@ -105,7 +105,7 @@ You can tell tree2repo to create the structure somewhere else using `--root`:
 
 ```bash
 tree2repo --root /tmp/new_project << 'EOF'
-my_project_roott/
+my_project_root/
   src/
     my_package/
       __init__.py
@@ -161,11 +161,12 @@ tree = """my_project_root/
       __init__.py
       core.py
   README.md
-```
+"""
+
 
 # Create under "./generated" and ignore the top-level label "my-project/"
 create_from_tree(tree_text=tree, root="./generated", ignore_root_label=True)
-`
+````
 
 Arguments:
 
@@ -218,10 +219,10 @@ skeleton = """example-project/
       api.py
   tests/
     test_api.py
-```
+    
 
 create_from_tree(skeleton, root=".", ignore_root_label=True)
-`
+```
 
 ---
 
@@ -230,7 +231,7 @@ create_from_tree(skeleton, root=".", ignore_root_label=True)
 If you want to work on tree2repo itself:
 
 ```bash
-git clone https://github.com/your-username/tree2repo.git
+git clone https://github.com/akshan-main/tree2repo.git
 cd tree2repo
 
 python -m venv .venv
