@@ -17,9 +17,9 @@ Instead of clicking `New folder` fifty times, you paste a tree and let this tool
 
 ## Installation
 
-`bash
+```bash
 pip install tree2repo
-`
+```
 
 ---
 
@@ -27,7 +27,7 @@ pip install tree2repo
 
 Assume you are inside a directory where you want to generate your project:
 
-`bash
+```bash
 cd my_project_root
 
 tree2repo << 'EOF'
@@ -41,7 +41,7 @@ my-project/
   README.md
   pyproject.toml
 EOF
-`
+```
 
 Result:
 
@@ -241,7 +241,7 @@ pip install -e .
 
 Run tests (if you add or modify them):
 
-`bash
+```bash
 pytest
 ```
 
