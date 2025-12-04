@@ -48,7 +48,7 @@ Result:
 - The top-level label line `my-project/` is ignored by default.
 - Inside `my_project_root` you will now have:
 
-`plain
+```python
 src/
   my_package/
     __init__.py
@@ -57,7 +57,7 @@ tests/
   test_core.py
 README.md
 pyproject.toml
-`
+```
 
 This is ideal when you get a tree for a repository but you are already standing at the intended root.
 
@@ -67,7 +67,7 @@ This is ideal when you get a tree for a repository but you are already standing 
 
 If you actually want the top-level folder to be created, use `--respect-root`:
 
-`bash
+```bash
 cd /tmp
 
 tree2repo --respect-root << 'EOF'
@@ -81,11 +81,11 @@ my-project/
   README.md
   pyproject.toml
 EOF
-`
+```
 
 Now you get:
 
-`plain
+```bash
 my-project/
   src/
     my_package/
@@ -95,7 +95,7 @@ my-project/
     test_core.py
   README.md
   pyproject.toml
-`
+```
 
 ---
 
@@ -103,7 +103,7 @@ my-project/
 
 You can tell tree2repo to create the structure somewhere else using `--root`:
 
-`bash
+```bash
 tree2repo --root /tmp/new_project << 'EOF'
 my-project/
   src/
@@ -112,7 +112,7 @@ my-project/
       core.py
   README.md
 EOF
-`
+```
 
 With default settings, the top-level label is ignored, so the files end up directly under `/tmp/new_project`.
 
@@ -129,7 +129,7 @@ tree2repo expects a very simple, whitespace-indented format:
 
 Example:
 
-`plain
+```bash
 my-project/
   src/
     my_package/
@@ -138,7 +138,7 @@ my-project/
   tests/
     test_core.py
   README.md
-`
+```
 
 Notes:
 
@@ -152,7 +152,7 @@ Notes:
 
 You can also use tree2repo directly from Python.
 
-`python
+```python
 from tree2repo import create_from_tree
 
 tree = """my-project/
@@ -161,7 +161,7 @@ tree = """my-project/
       __init__.py
       core.py
   README.md
-"""
+```
 
 # Create under "./generated" and ignore the top-level label "my-project/"
 create_from_tree(tree_text=tree, root="./generated", ignore_root_label=True)
@@ -188,7 +188,7 @@ Arguments:
 
 ### 1. Generate a simple package skeleton
 
-`bash
+```bash
 cd my_package_root
 
 tree2repo << 'EOF'
@@ -202,13 +202,13 @@ example-project/
   pyproject.toml
   README.md
 EOF
-`
+```
 
 You now have a ready-made layout to start turning into a real package.
 
 ### 2. Use from within a script
 
-`python
+```python
 from tree2repo import create_from_tree
 
 skeleton = """example-project/
@@ -218,7 +218,7 @@ skeleton = """example-project/
       api.py
   tests/
     test_api.py
-"""
+```
 
 create_from_tree(skeleton, root=".", ignore_root_label=True)
 `
@@ -229,7 +229,7 @@ create_from_tree(skeleton, root=".", ignore_root_label=True)
 
 If you want to work on tree2repo itself:
 
-`bash
+```bash
 git clone https://github.com/your-username/tree2repo.git
 cd tree2repo
 
@@ -243,7 +243,7 @@ Run tests (if you add or modify them):
 
 `bash
 pytest
-`
+```
 
 ---
 
