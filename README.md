@@ -31,7 +31,7 @@ Assume you are inside a directory where you want to generate your project:
 cd my_project_root
 
 tree2repo << 'EOF'
-my-project/
+my-project_root/
   src/
     my_package/
       __init__.py
