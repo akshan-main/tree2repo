@@ -31,7 +31,7 @@ Assume you are inside a directory where you want to generate your project:
 cd my_project_root
 
 tree2repo << 'EOF'
-my-project_root/
+my_project_root/
   src/
     my_package/
       __init__.py
@@ -71,7 +71,7 @@ If you actually want the top-level folder to be created, use `--respect-root`:
 cd /tmp
 
 tree2repo --respect-root << 'EOF'
-my-project/
+my_project_root/
   src/
     my_package/
       __init__.py
@@ -86,7 +86,7 @@ EOF
 Now you get:
 
 ```bash
-my-project/
+my_project_root/
   src/
     my_package/
       __init__.py
@@ -105,7 +105,7 @@ You can tell tree2repo to create the structure somewhere else using `--root`:
 
 ```bash
 tree2repo --root /tmp/new_project << 'EOF'
-my-project/
+my_project_roott/
   src/
     my_package/
       __init__.py
@@ -130,7 +130,7 @@ tree2repo expects a very simple, whitespace-indented format:
 Example:
 
 ```bash
-my-project/
+my_project_root/
   src/
     my_package/
       __init__.py
@@ -155,7 +155,7 @@ You can also use tree2repo directly from Python.
 ```python
 from tree2repo import create_from_tree
 
-tree = """my-project/
+tree = """my_project_root/
   src/
     my_package/
       __init__.py
@@ -237,7 +237,7 @@ python -m venv .venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
 pip install -e .
-`
+```
 
 Run tests (if you add or modify them):
 
